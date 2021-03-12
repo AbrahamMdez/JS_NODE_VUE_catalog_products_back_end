@@ -1,5 +1,5 @@
 import mongoose from 'mongoose';
-const { MONGO_URI, MONGO_URI_TEST } = process.env;
+const { MONGO_URI, MONGO_URI_TEST, NODE_ENV } = process.env;
 
 const DB_CONNECTION = NODE_ENV === 'test' ? MONGO_URI_TEST : MONGO_URI;
 

@@ -2,9 +2,9 @@ import Article from '../models/article.js';
 
 export const createNewArticle = async(req, res) => {
 
-    const { title, description } = req.body;
-       
+    
     try {
+        const { title, description } = req.body;
         const newArticle = await new Article({ title, description });
         await newArticle.save();
         res.status(200).json(newArticle);
