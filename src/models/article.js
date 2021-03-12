@@ -18,6 +18,12 @@ const ArticleSchema = new Schema({
     date: {
         type: Date,
         default: Date.now
+    },
+
+    expire_at: {
+        type: Date, 
+        default: Date.now, 
+        expires: 60 * 60 * 24 * 7
     }
 });
 

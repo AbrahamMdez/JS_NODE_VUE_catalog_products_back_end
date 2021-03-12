@@ -5,6 +5,8 @@ import * as articleCtrol from '../controllers/article.controller.js';
 
 router.get('/article', articleCtrol.getArticles);
 
+router.get('/article/:id', articleCtrol.getOneArticle);
+
 router.post('/createArticle', articleCtrol.createNewArticle);
 
 router.put('/article/:id', articleCtrol.updateArticle);

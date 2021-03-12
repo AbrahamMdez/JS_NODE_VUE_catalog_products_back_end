@@ -20,7 +20,6 @@ export const getArticles = async(req, res) => {
 
     try {
         const articlesToFind = await Article.find();
-        console.log(articlesToFind)
         res.json(articlesToFind);
     }catch (error) {
         return res.status(400).json({
@@ -28,6 +27,22 @@ export const getArticles = async(req, res) => {
             error
         });
     };
+};
+
+export const getOneArticle = async(req, res) => {
+   
+    const { id } = req.params.id;
+
+    try {
+        const oneArticle = await Article.findOne({ id });
+        res.json(oneArticle)
+    } catch (error) {
+        return res.status(400).json({
+            message: 'Error',
+            error
+        })
+    }
+    
 };
 
 export const updateArticle = async(req, res) => {
